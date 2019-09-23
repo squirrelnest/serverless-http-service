@@ -13,40 +13,40 @@ app.use(bodyParser.json({ strict: false }));
 
 // POST - Create User endpoint
 app.post('/players', function (req, res) {
-  const { userId, name } = req.body;
-const params = {
-    TableName: PLAYERS_TABLE,
-    Item: {
-      userId: userId,
-      name: name,
-    },
-  };
-dynamoDb.put(params, (error) => {
-    if (error) {
-      console.log(error);
-      res.status(400).json({ error: `Could not create user ${userId}` });
-    }
-    res.json({ userId, name });
-  });
+  const { playerId, name } = req.body;
+  const params = {
+      TableName: PLAYERS_TABLE,
+      Item: {
+        playerId: playerId,
+        name: name,
+      },
+    };
+  dynamoDb.put(params, (error) => {
+      if (error) {
+        console.log(error);
+        res.status(400).json({ error: `Could not create user ${playerId}` });
+      }
+      res.json({ playerId, name });
+    });
 })
 // GET - Get User endpoint
-app.get('/players/:userId', function (req, res) {
+app.get('/players/:playerId', function (req, res) {
   const params = {
     TableName: PLAYERS_TABLE,
     Key: {
-      userId: req.params.userId,
+      playerId: req.params.playerId,
     },
   }
 dynamoDb.get(params, (error, result) => {
     if (error) {
       console.log(error);
-      res.status(400).json({ error: `Could not get user ${userId}` });
+      res.status(400).json({ error: `Could not get user ${playerId}` });
     }
     if (result.Item) {
-      const {userId, name} = result.Item;
-      res.json({ userId, name });
+      const {playerId, name} = result.Item;
+      res.json({ playerId, name });
     } else {
-      res.status(404).json({ error: `User ${userId} not found` });
+      res.status(404).json({ error: `User ${playerId} not found` });
     }
   });
 })
