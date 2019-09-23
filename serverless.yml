@@ -20,6 +20,9 @@ service: basic-http
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
 
+custom:
+  tableName: 'players-table-${self:provider.stage}'
+
 provider:
   name: aws
   runtime: nodejs10.x
