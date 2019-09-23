@@ -1,0 +1,25 @@
+{
+  "name": "basic-http",
+  "version": "1.0.0",
+  "description": "set up API endpoints using serverless",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Mikka Pineda",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "serverless-http": "^2.3.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/squirrelnest/serverless-http-service.git"
+  },
+  "bugs": {
+    "url": "https://github.com/squirrelnest/serverless-http-service/issues"
+  },
+  "homepage": "https://github.com/squirrelnest/serverless-http-service#readme"
+}
