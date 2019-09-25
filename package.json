@@ -15,7 +15,10 @@
     "express": "^4.17.1",
     "serverless-http": "^2.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "serverless-pseudo-parameters": "^2.4.0",
+    "serverless-step-functions": "^2.8.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/squirrelnest/serverless-http-service.git"
